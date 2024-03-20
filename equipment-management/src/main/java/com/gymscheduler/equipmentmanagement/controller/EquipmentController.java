@@ -21,18 +21,18 @@ public class EquipmentController {
     }
 
     @PostMapping
-    public ResponseEntity<Equipment> createUser(@RequestBody Equipment user) {
+    public ResponseEntity<Equipment> createEquipment(@RequestBody Equipment user) {
         return ResponseEntity.ok(equipmentService.createEquipment(user));
     }
 
     @GetMapping
-    public ResponseEntity<List<Equipment>> getAllUsers() {
+    public ResponseEntity<List<Equipment>> getAllEquipments() {
         return ResponseEntity.ok(equipmentService.getAllEquipments());
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<String> deleteUser(@PathVariable(name = "id") Long id) {
+    public ResponseEntity<String> deleteEquipment(@PathVariable(name = "id") Long id) {
         try{
             equipmentService.deleteEquipment(id);
             return ResponseEntity.ok("Deleted");
